@@ -1,6 +1,6 @@
 {
   "name": "segment-service-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A layer built on top of analytics-node to have some more bells and whistles",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
