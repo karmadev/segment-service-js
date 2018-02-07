@@ -5,7 +5,7 @@ Send events to Segment from your Node JS backend. This package is built on top o
 ## Quickstart
 
 ```shell
-  npm install segment-service-js
+  yarn add segment-service-js
 ```
 
 #### Basic Usage
