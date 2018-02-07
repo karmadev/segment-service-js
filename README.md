@@ -8,7 +8,8 @@ Send events to Segment from your Node JS backend. This package is built on top o
   yarn add segment-service-js
 ```
 
-#### Basic Usage
+### Basic Usage
+
 Basic usage involves adding the `AnalyticsService` to your setup. **IMPORTANT** You need to fetch your Write Key from your Segment destination and feed it to `AnalyticsService` (as seen below).
 
 ```js
@@ -19,7 +20,15 @@ const segmentWriteKey = 'your_segment_write_key'
 const analytics = new AnalyticsService({
   writeKey: segmentWriteKey,
 })
-// ways down in your code ...
+```
+
+## API
+
+### Identify
+
+Example
+
+```js
 analytics.identify({
   userId: userId,
   traits: {
@@ -29,6 +38,25 @@ analytics.identify({
     createdAt: new Date(user.createdAt),
   },
 })
+```
+
+Accepts
+
+- **userId** (`string`)
+- **traits** (`object`)
+- **timestamp** (`string`)
+- **context** (`object`)
+- **anonymousId** (`string`)
+
+Mandatory
+
+- `userId` OR `anonymousId`
+
+### Track
+
+Example
+
+```js
 analytics.track({
   userId: userId,
   event: 'user_logged_in',
@@ -38,3 +66,45 @@ analytics.track({
   },
 })
 ```
+
+Accepts
+
+- **event** (`string`)
+- **userId** (`string`)
+- **timestamp** (`string`)
+- **properties** (`object`)
+- **context** (`object`)
+- **anonymousId** (`string`)
+
+Mandatory
+
+- `userId` OR `anonymousId`
+- `event`
+
+### Group
+
+Example
+
+```js
+analytics.group({
+  userId: `${userId}`,
+  groupId: `${companyId}`,
+  traits: {
+    name: company.name,
+  },
+})
+```
+
+Accepts
+
+- **userId** (`string`)
+- **groupId** (`string`)
+- **traits** (`object`)
+- **timestamp** (`string`)
+- **context** (`object`)
+- **anonymousId** (`string`)
+
+Mandatory
+
+- `userId` OR `anonymousId`
+- `groupId`
