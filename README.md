@@ -14,7 +14,7 @@ Basic usage involves adding the `AnalyticsService` to your setup. **IMPORTANT** 
 ```js
 import { AnalyticsService } from 'segment-service-js'
 
-const segmentWriteKey = 'your_segment_write_key
+const segmentWriteKey = 'your_segment_write_key'
 // Initialize the AnalyticsService
 const analytics = new AnalyticsService({
   writeKey: segmentWriteKey,
